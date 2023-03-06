@@ -17,9 +17,38 @@ function updatePreview() {
     let markedUpHTML = marked(editorValue);
     previewElement.innerHTML = markedUpHTML;
 }
+
+function setDefault() {
+    let defaultText = `
+    # Fetsundscripter Markdown Previewer
+    ## a markdown previewer
+    [Learn more about Fetsundscripter](https://www.facebook.com).
+    <dl>
+  <dt>Definition list</dt>
+  <dd>Is something people use sometimes.</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+\`Thank you for watching this code and working on it\`
+
+    - Code
+    - All
+    - Day
+    > learn to program and code with my dumbass
+    [![Fetsundscripter](https://thumbs.dreamstime.com/b/photo-serious-coder-interested-critical-errors-failures-arising-remaining-unknown-started-coding-scripts-using-161966374.jpg" data-src="https://thumbs.dreamstime.com/b/photo-serious-coder-interested-critical-errors-failures-arising-remaining-unknown-started-coding-scripts-using-161966374.jpg)]
+    *Bolded Text*
+
+    `;
+    let editorField = document.getElementById("editor");
+    let previewElement = document.getElementById("preview");
+    editorField.value = defaultText;
+    previewElement.innerHTML = marked(defaultText);
+}
     </script>
   </head>
-  <body>
+  <body onload="setDefault()">
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center text-white bg-success">
