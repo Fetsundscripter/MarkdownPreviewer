@@ -19,28 +19,40 @@ function updatePreview() {
 }
 
 function setDefault() {
-    let defaultText = `
-    # Fetsundscripter Markdown Previewer
-    ## a markdown previewer
-    [Learn more about Fetsundscripter](https://www.facebook.com).
-    <dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
+    let defaultText = `\
+# Fetsundscripter Markdown Previewer
+## a markdown previewer
+[Learn more about Fetsundscripter](https://www.facebook.com).
+<dl>
+<dt>Definition list</dt>
+<dd>Is something people use sometimes.</dd>
 
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+<dt>Markdown in HTML</dt>
+<dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
 </dl>
 
-\`Thank you for watching this code and working on it\`
+\`This is an example of inline code\`
 
-    - Code
-    - All
-    - Day
-    > learn to program and code with my dumbass
-    [![Fetsundscripter](https://thumbs.dreamstime.com/b/photo-serious-coder-interested-critical-errors-failures-arising-remaining-unknown-started-coding-scripts-using-161966374.jpg" data-src="https://thumbs.dreamstime.com/b/photo-serious-coder-interested-critical-errors-failures-arising-remaining-unknown-started-coding-scripts-using-161966374.jpg)]
-    *Bolded Text*
+\`\`\`
+function exampleoff() {
+    return multiLineCodeBlock;
+}
+\`\`\`
 
-    `;
+- This
+- is
+- an
+- example
+- of
+- list
+- items
+
+> This is an example of block code
+
+![Fetsundscripter](https://thumbs.dreamstime.com/b/photo-serious-coder-interested-critical-errors-failures-arising-remaining-unknown-started-coding-scripts-using-161966374.jpg")
+    
+**This is an example of bolded text**`;
+
     let editorField = document.getElementById("editor");
     let previewElement = document.getElementById("preview");
     editorField.value = defaultText;
@@ -58,7 +70,7 @@ function setDefault() {
         <div class="row">
             <div class="col-6 bg-primary">
                 <p>The editor will be here</p>
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>
+                <textarea class="form-control" id="editor" onkeyup="updatePreview()"></textarea>
             </div>   
             <div class="col-6 bg-danger">
                 <p>The markdown will be here</p>
